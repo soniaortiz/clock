@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles.css'
 const second = 1000;
+
 export class Clock extends React.Component {
 
     constructor(props) {
@@ -29,7 +30,7 @@ export class Clock extends React.Component {
             } else {
                 window.alert(`Time's up`)
                 clearInterval(intervalId)
-                this.setState({timer: second * 10})
+                this.setState({ timer: second * 10 })
             }
         }, second)
     }
@@ -39,10 +40,10 @@ export class Clock extends React.Component {
         return (<div>
             <h1>Current time</h1>
 
-            <div className='clockContainer'>
-                <span>{time.getHours()}</span> 
-                : <span> {time.getMinutes()}</span>  
-                : <span>{time.getSeconds()}</span>
+            <div className='clockContainer' aria-label='Digital clock' tabIndex='0'>
+                <span tabIndex='0'>{time.getHours()}</span>
+                : <span tabIndex='0'> {time.getMinutes()}</span>
+                : <span tabIndex='0'>{time.getSeconds()}</span>
 
             </div>
 
