@@ -40,8 +40,8 @@ export class Clock extends React.Component {
             <h1>Current time</h1>
 
             <div className='clockContainer'>
-                <span>{time.getHours()}</span>
-                : <span> {time.getMinutes()}</span> 
+                <span>{time.getHours()}</span> 
+                : <span> {time.getMinutes()}</span>  
                 : <span>{time.getSeconds()}</span>
 
             </div>
