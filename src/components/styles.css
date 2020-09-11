@@ -1,0 +1,15 @@
+span{
+    /* border: solid 1px; */
+    margin: '3px';
+    padding: '3px'
+}
+
+.clockContainer{
+    display: inline-block;
+    height: 30px;
+    width: 200px;
+    border: solid;
+    background-color: aliceblue;
+    margin: 30px;
+    align-content: center;
+}

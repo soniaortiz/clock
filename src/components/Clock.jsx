@@ -1,11 +1,12 @@
 import React from 'react'
+import './styles.css'
 const second = 1000;
 export class Clock extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            currentTime: new Date().toLocaleString(),
+            currentTime: new Date(),
             timer: second * 10
         }
     }
@@ -13,7 +14,7 @@ export class Clock extends React.Component {
     componentDidMount() {
         setInterval(() => {
             this.setState({
-                currentTime: new Date().toLocaleString()
+                currentTime: new Date()
             })
         }, 1000)
     }
@@ -32,17 +33,27 @@ export class Clock extends React.Component {
     }
 
     render() {
+        let time = this.state.currentTime
         return (<div>
             <h1>Current time</h1>
-            <div>{this.state.currentTime.toLocaleString()}</div>
-            {
-                this.state.timer === 0 
-                    ? <h3>Time's up</h3>
-                    : null
-            }
+
+            <div className='clockContainer'>
+                <span>{time.getHours()}</span>
+                : <span> {time.getMinutes()}</span> 
+                : <span>{time.getSeconds()}</span>
+
+            </div>
+
+            <br />
             <button
                 onClick={this.set10SecTimer}
             >Set timer for 10 seconds</button>
+
+            {
+                this.state.timer === 0
+                    ? <h3>Time's up</h3>
+                    : null
+            }
         </div>)
     }
 }
