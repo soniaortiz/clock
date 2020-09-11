@@ -27,7 +27,9 @@ export class Clock extends React.Component {
                     timer: this.state.timer - second
                 })
             } else {
+                window.alert(`Time's up`)
                 clearInterval(intervalId)
+                this.setState({timer: second * 10})
             }
         }, second)
     }
@@ -48,12 +50,6 @@ export class Clock extends React.Component {
             <button
                 onClick={this.set10SecTimer}
             >Set timer for 10 seconds</button>
-
-            {
-                this.state.timer === 0
-                    ? <h3>Time's up</h3>
-                    : null
-            }
         </div>)
     }
 }
