@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Clock } from './components/Clock'
+import { CitiesTimes } from './components/CitiesTime'
 
 function App() {
   return (
     <div className="App">
-      <Clock/>
+      <CitiesTimes/>
     </div>
   );
 }
