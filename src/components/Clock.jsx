@@ -19,13 +19,16 @@ export class Clock extends React.Component {
     }
 
     set10SecTimer = () => {
-        if (this.state.timer > 0) {
-            setInterval(() => {
+        let intervalId = setInterval(() => {
+            if (this.state.timer > 0) {
+
                 this.setState({
                     timer: this.state.timer - second
                 })
-            }, second)
-        }
+            }else{
+                clearInterval(intervalId)
+            }
+        }, second)
     }
 
     render() {
